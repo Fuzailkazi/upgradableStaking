@@ -17,20 +17,20 @@ contract OrcaCoinTest is Test {
     }
 
     function testFailMint() public  {
-        vm.startPrank(0x587EFaEe4f308aB2795ca35A27Dff8c1dfAF9e3f);
-        orcaCoin.mint(0x587EFaEe4f308aB2795ca35A27Dff8c1dfAF9e3f,10);   
+        vm.startPrank(0x8d0C05dfbD1824fD35964CFb34C2DCa1a434988E);
+        orcaCoin.mint(0x8d0C05dfbD1824fD35964CFb34C2DCa1a434988E,10);   
         vm.stopPrank(); 
     }
 
     function testMint() public {
-        orcaCoin.mint(0x587EFaEe4f308aB2795ca35A27Dff8c1dfAF9e3f,10);
-        assert(orcaCoin.balanceOf(0x587EFaEe4f308aB2795ca35A27Dff8c1dfAF9e3f) == 10);
+        orcaCoin.mint(0x8d0C05dfbD1824fD35964CFb34C2DCa1a434988E,10);
+        assert(orcaCoin.balanceOf(0x8d0C05dfbD1824fD35964CFb34C2DCa1a434988E) == 10);
     }
 
     function testChangeStakingContract() public {
-        orcaCoin.updateStakingContract(0x587EFaEe4f308aB2795ca35A27Dff8c1dfAF9e3f);
-        vm.startPrank(0x587EFaEe4f308aB2795ca35A27Dff8c1dfAF9e3f);
-        orcaCoin.mint(0x587EFaEe4f308aB2795ca35A27Dff8c1dfAF9e3f,10);
-        assert(orcaCoin.balanceOf(0x587EFaEe4f308aB2795ca35A27Dff8c1dfAF9e3f) == 10);
+        orcaCoin.updateStakingContract(0x8d0C05dfbD1824fD35964CFb34C2DCa1a434988E);
+        vm.startPrank(0x8d0C05dfbD1824fD35964CFb34C2DCa1a434988E);
+        orcaCoin.mint(0x8d0C05dfbD1824fD35964CFb34C2DCa1a434988E,10);
+        assert(orcaCoin.balanceOf(0x8d0C05dfbD1824fD35964CFb34C2DCa1a434988E) == 10);
     }
 }
